@@ -1,5 +1,5 @@
 describe('Test Meal finder', () => {
-  it.skip('should open', () => {
+  it('should open', () => {
     cy.visit('http://localhost:3000/')
   });
   it('should type Pasta', () => {
@@ -13,11 +13,11 @@ describe('Test Meal finder', () => {
         .get('#root > div > div > input[type=text]')
         .type("Pasta")
         .get('#root > div > div > button:nth-child(3)')
-        .click()
+        .click();
   });
   it('should search for nothing', () => {
     cy.visit('http://localhost:3000/')
         .get('#root > div > div > button:nth-child(3)')
-        .click()
+        .click();
   })
 })
