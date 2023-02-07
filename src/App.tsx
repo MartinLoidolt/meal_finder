@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import {getMealByFirstLetters, getMealsByName} from "./database/apiCalls";
+import {getMealByFirstLetters, getMealRandom, getMealsByName} from "./Database/apiCalls";
 import {Meal} from "./Utils/Interfaces";
 
 function App() {
@@ -35,14 +35,26 @@ function App() {
         setTextArea(textAreaText);
     }
 
+    async function onGetRandomMeal() {
+      let meals = await getMealRandom();
+
+        setMeals(meals);
+        let textAreaText = "";
+        meals.forEach(meal => {
+            textAreaText = textAreaText + meal.strMeal + ", \n";
+        })
+
+        setTextArea(textAreaText);
+    }
+
   return (
     <div className="App">
       <div className="App-body">
       <p>Meal Finder</p>
       <input type={"text"} onChange={event => {setMealSearchText(event.target.value)}}/>
-      <button onClick={onSearchMealByNameClick}>Search By Name</button>
+          <button onClick={onSearchMealByNameClick}>Search By Name</button>
           <button onClick={onSearchMealbyFirstLetters}>Search By first letters</button>
-
+          <button onClick={onGetRandomMeal}>Get random meal</button>
           <textarea readOnly={true} value={textArea}/>
       </div>
     </div>

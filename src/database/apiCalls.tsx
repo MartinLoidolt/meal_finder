@@ -23,3 +23,15 @@ export async function getMealByFirstLetters(firstLetters: string): Promise<Meal[
     }
     return [];
 }
+
+export async function getMealRandom(): Promise<Meal[]> {
+    const resp = await fetch('https://www.themealdb.com/api/json/v1/1/random.php', {
+        method: 'GET',
+    });
+
+    if(resp.status === 200) {
+        let meals = (await resp.json()).meals;
+        return meals ? meals : [];
+    }
+    return [];
+}
