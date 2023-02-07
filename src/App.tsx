@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import {getMealByFirstLetters, getMealRandom, getMealsByName} from "./Database/apiCalls";
+import {getMealByFirstLetters, getMealRandom, getMealsByName} from "./database/apiCalls";
 import {Meal} from "./Utils/Interfaces";
 
 function App() {
