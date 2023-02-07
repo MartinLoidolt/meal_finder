@@ -65,12 +65,12 @@ function App() {
     <div className="App">
       <div className="App-body">
       <p>Meal Finder</p>
-      <input type={"text"} onChange={event => {setMealSearchText(event.target.value)}}/>
-          <button onClick={onSearchMealByNameClick}>Search By Name</button>
-          <button onClick={onSearchMealbyFirstLetters}>Search By first letters</button>
-          <button onClick={onGetRandomMeal}>Get random meal</button>
+      <input id="txInput" type={"text"} onChange={event => {setMealSearchText(event.target.value)}}/>
+          <button id="btSearchByName" onClick={onSearchMealByNameClick}>Search By Name</button>
+          <button id="btSearchByFirstLetter" onClick={onSearchMealbyFirstLetters}>Search By first letters</button>
+          <button id="btGetRandomMeal" onClick={onGetRandomMeal}>Get random meal</button>
           <button onClick={onGetMealByID}>Get Meal By ID</button>
-          <textarea readOnly={true} value={textArea}/>
+          <textarea id="taOutput" readOnly={true} value={textArea}/>
       </div>
     </div>
   );
