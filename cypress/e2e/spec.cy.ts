@@ -7,7 +7,6 @@ describe('Test Meal finder', () => {
         .get('#txInput')
         .type("Pasta")
         .should('have.value', 'Pasta');
-
   });
   it('should search for Pasta', () => {
     cy.visit('http://localhost:3000/')
