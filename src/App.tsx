@@ -90,9 +90,8 @@ function App() {
           <button id="btSearchByFirstLetter" onClick={onSearchMealbyFirstLetters}>Search By first letters</button>
           <button id="btGetRandomMeal" onClick={onGetRandomMeal}>Get random meal</button>
           <button id="btGetMealById" onClick={onGetMealByID}>Get Meal By ID</button>
-          <button id="btGetFilteredMeals" onClick={onGetMealsFilteredByMainIngredient}>Get Meals filtered by main ingredient</button>
+          <button id="btFilterMealsByMainIngredient" onClick={onGetMealsFilteredByMainIngredient}>Get Meals filtered by main ingredient</button>
           <textarea id="taOutput" readOnly={true} value={textArea}/>
-
       </div>
     </div>
   );
