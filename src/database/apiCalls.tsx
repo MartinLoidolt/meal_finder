@@ -47,3 +47,15 @@ export async function getMealByID(id: number): Promise<Meal[]> {
     }
     return [];
 }
+
+export async function getMealsFilteredByMainIngredient(ingredient: string): Promise<Meal[]> {
+    const resp = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i=' + ingredient, {
+        method: 'GET',
+    });
+
+    if(resp.status === 200) {
+        let meals = (await resp.json()).meals;
+        return meals ? meals : [];
+    }
+    return [];
+}
